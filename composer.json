@@ -1,0 +1,55 @@
+{
+    "name": "company/intranet",
+    "description": "Company Intranet Portal",
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": "^8.1",
+        "laravel/framework": "^10.0",
+        "laravel/tinker": "^2.8",
+        "laravel/ui": "*",
+        "laravelcollective/html": "^6.4"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.9.1",
+        "mockery/mockery": "^1.4.4",
+        "phpunit/phpunit": "^10.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists(chr(39).chr(46).chr(101).chr(110).chr(118).chr(39)) || copy(chr(39).chr(46).chr(101).chr(110).chr(118).chr(46).chr(101).chr(120).chr(97).chr(109).chr(112).chr(108).chr(101).chr(39), chr(39).chr(46).chr(101).chr(110).chr(118).chr(39));\""
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
